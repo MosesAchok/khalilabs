@@ -1,5 +1,6 @@
 
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -8,6 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     clean: true,
+    publicPath: "/",
   },
 
   devServer: {
@@ -19,6 +21,14 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
   },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+      filename: "index.html",
+      inject: "body",
+    }),
+  ],
 
   module: {
     rules: [
