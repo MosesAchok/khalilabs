@@ -20,7 +20,7 @@ import {
   Wallet,
 } from "lucide-react";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://khalilabs-backend.onrender.com/api";
 
 function AdminDashboard() {
   const [admin, setAdmin] = useState({});
